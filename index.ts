@@ -1,4 +1,6 @@
 import {Template} from './workspace/template'
+import {startServer} from "./workspace/Server";
+
 import log4js = require('log4js');
 
 log4js.configure({
@@ -16,8 +18,9 @@ logger.info("test");
 
 export class Index {
     public static main(): number {
-        const template = new Template();
-        template.run();
+        startServer()
+        // const template = new Template();
+        // template.run();
 
         return 0;
     }
