@@ -15,7 +15,7 @@ function closestStops(req, res) {
             .then(stopPoints => stopPoints.map(getNameAndBusesPromises))
             .then(stopPointPromises => Promise.all(stopPointPromises))
             .then(outputBusArray => {
-                logger.debug(outputBusArray)
+                logger.debug(outputBusArray);
                 res.type("json");
                 res.send((outputBusArray));
             })
@@ -24,7 +24,7 @@ function closestStops(req, res) {
 }
 
 function getStopNameSuggestions(req, res) {
-    logger.debug(`Autocomplete: request received: ${req.queryString}`)
+    logger.debug(`Autocomplete: request received: ${req.queryString}`);
     if (req.query.hasOwnProperty('queryString')) {
         getStopPointsByName(req.query['queryString'])
             .then(stopIds => stopIds.map(getStopPointName))
@@ -47,7 +47,7 @@ function getBusesByStopName(req, res) {
             .then(stopPoints => stopPoints.map(getNameAndBusesPromises))
             .then(stopPointPromises => Promise.all(stopPointPromises))
             .then(outputBusArray => {
-                logger.debug(outputBusArray)
+                logger.debug(outputBusArray);
                 res.type("json");
                 res.send((outputBusArray));
             })
@@ -81,18 +81,6 @@ export function startServer() {
 
 
 function getNameAndBusesPromises(stopPoint): Promise<StopPoint> {
-    const promise1 = stopPoint.getCommonName()
-    const promise2 = stopPoint.getNextBuses()
-    Promise.all([promise1, promise2]).then(([name, busses]) => {
-
-    })
-    promise1.then((name)=> {
-        promise2.then( stops => {
-
-        })
-    }).catch(
-
-    )
     return stopPoint.getCommonName().then(stopPointCommonName => {
         stopPoint.commonName = stopPointCommonName;
         logger.debug(stopPointCommonName);
