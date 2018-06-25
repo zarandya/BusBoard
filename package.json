@@ -16,5 +16,8 @@
     "moment": "^2.22.2",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0"
   }
 }

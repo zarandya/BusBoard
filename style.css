@@ -1,0 +1,38 @@
+#inputDiv {
+    text-align: center;
+}
+#postcodeInput {
+    text-align: center;
+    font-size: larger;
+}
+
+
+h2 {
+    font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+    margin-top: 24px;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+h3 {
+    font: 400 28px/1.5 Helvetica, Verdana, sans-serif;
+    margin-top: 12px;
+    margin-bottom: 0;
+    margin-left: 24px;
+    padding: 0;
+}
+
+#responseDiv {
+    font: 400 24px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0;
+    margin-left: 24px;
+    padding: 0;
+}
+
+
+
+
+
+/*#responseDiv {*/
+    /*font-family: Arial;*/
+/*}*/

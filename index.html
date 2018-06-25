@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>BusBoard</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
-<div id="hi"></div>
+<div id="inputDiv">
+<input type="text" id="postcodeInput" value="sw72bb" oninput="getStopData()" placeholder="Enter a postcode..."/>
+</div>
+
+<div id="responseDiv"></div>
 
 </body>
 </html>
