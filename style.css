@@ -1,9 +1,10 @@
 #inputDiv {
     text-align: center;
 }
-#postcodeInput {
+#userInput {
     text-align: center;
     font-size: larger;
+    width: 500px;
 }
 
 

@@ -70,8 +70,27 @@ export function findStopPointsNearLocation(location: LatitudeLongitude, radius: 
         .then(response => response["stopPoints"].map(stop => stop["naptanId"]))
 }
 
+export function getStopPointsByName(name: string): Promise<string[]> {
+    const options = {
+        uri: 'https://api.tfl.gov.uk/StopPoint/Search',
+        qs: {
+            query: name,
+            stopTypes: "NaptanPublicBusCoachTram",
+            app_id: 'cc0a77bc',
+            app_key: '5e599ef309e3541b8922e2343db854ff',
+        },
+        // headers: {
+        //     'User-Agent': 'Request-Promise'
+        // },
+        json: true // Automatically parses the JSON string in the response
+    };
 
-export function getStopPointName(stopPointId: string) {
+    return rp(options)
+        .then(response => response["matches"].map(match => match["id"]))
+}
+
+
+export function getStopPointName(stopPointId: string):Promise<string> {
     // https://api.tfl.gov.uk/StopPoint/490008660S
 
     const options = {
